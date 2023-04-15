@@ -1,0 +1,41 @@
+management:
+  endpoints:
+    web:
+      cors:
+        allowed-origins: '*'
+      exposure:
+        ## ?? Actuator ???????
+        include: '*'
+      ## ??????
+#      base-path: /
+  endpoint:
+    health:
+      ## ????
+      show-details: when_authorized
+      ## ????
+      roles: ADMIN
+      ## ????????
+      status:
+        order: FATAL,DOWN,OUT_OF_SERVER,UP,UNKNOWN
+        ## ??????
+        http-mapping:
+          FATAL: 503
+    shutdown:
+      ## ??????????
+      enabled: true
+spring:
+  security:
+    user:
+      name: sihai
+      password: root
+      roles: ADMIN
+  redis:
+    password: rootroot
+info:
+  app:
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
+  author:
+    name: sihai

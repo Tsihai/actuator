@@ -1,4 +1,8 @@
 management:
+  info:
+    git:
+      ## ?? simple ????
+      mode: full
   endpoints:
     web:
       cors:
@@ -31,6 +35,10 @@ spring:
       roles: ADMIN
   redis:
     password: rootroot
+  boot:
+    admin:
+      client:
+        url: http://localhost:8081
 info:
   app:
     encoding: @project.build.sourceEncoding@

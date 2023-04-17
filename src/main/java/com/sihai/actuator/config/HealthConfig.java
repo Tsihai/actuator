@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class HealthConfig implements HealthIndicator {
     @Override
     public Health health() {
-        return Health.status("FATAL").withDetail("msg", "发现严重问题").build();
-        // return Health.up().withDetail("msg", "正常").build();
+//        return Health.status("FATAL").withDetail("msg", "发现严重问题").build();
+         return Health.up().withDetail("msg", "正常").build();
     }
 }
